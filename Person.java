@@ -1,32 +1,25 @@
 package com.claim;
 
+
+
 public class Person {
 	private String firstName;
-	private String middleName1;
-	private String middleName2;
+	private String middleName;
+
 	private String lastName;
 	private String address;
 	private String phoneNum;
 
 	// for just one middle name
-	public Person(String firstName, String middleName1, String lastName, String address, String phoneNum) {
+	public Person(String firstName, String middleName, String lastName, String address, String phoneNum) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.middleName1 = middleName1;
+		this.middleName = middleName;
 		this.address = address;
 		this.phoneNum = phoneNum;
 	}
 
-	// for two middle names
-	public Person(String firstName, String middleName1, String middleName2, String lastName, String address,
-			String phoneNum) {
-		this.firstName = firstName;
-		this.middleName1 = middleName1;
-		this.middleName2 = middleName2;
-		this.lastName = lastName;
-		this.address = address;
-		this.phoneNum = phoneNum;
-	}
+
 
 	public Person() {
 		// TODO Auto-generated constructor stub
@@ -45,13 +38,10 @@ public class Person {
 		return this.firstName;
 	}
 
-	public String getMiddleName1() {
-		return this.middleName1;
+	public String getMiddleName() {
+		return this.middleName;
 	}
 
-	public String getMiddleName2() {
-		return this.middleName2;
-	}
 
 	public String getLastName() {
 		return this.lastName;
@@ -69,24 +59,21 @@ public class Person {
 		this.firstName = firstName;
 	}
 
-	public void setMiddleName1(String middleName1) {
-		this.middleName1 = middleName1;
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
 	}
 
-	public void setMiddleName2(String middleName2) {
-		this.middleName2 = middleName2;
-	}
+	Person [] people = new Person[0];
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public void addPerson(Person person1) {
-		Person [] people = new Person[0];
-		Person [] temp = new Person [people.length + 1];
-		for(int i = 0 ; i < people.length; i++) {
-			temp[i] = people[i];
-		}
-		temp[temp.length -1] = person1;
-		people = temp;
+	public String toString() {
+		Person p = new Person();
+		return "First name: " + this.firstName+"\n" + "Middle Name: " + this.middleName + "\n" + "Last Name: " + this.lastName + "\n" + "Address: " + this.address + "\n" + 
+				"Phone number: (" +this.phoneNum.substring(0, 3) +")" + this.phoneNum.substring(3, 6) + "-"+this.phoneNum.substring(6, 10);
 	}
+
+	
 }
+
