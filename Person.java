@@ -69,7 +69,7 @@ public class Person {
 		this.lastName = lastName;
 	}
 	public String toString() {
-		Person p = new Person();
+		//Person p = new Person();
 		return "First name: " + this.firstName+"\n" + "Middle Name: " + this.middleName + "\n" + "Last Name: " + this.lastName + "\n" + "Address: " + this.address + "\n" + 
 				"Phone number: (" +this.phoneNum.substring(0, 3) +")" + this.phoneNum.substring(3, 6) + "-"+this.phoneNum.substring(6, 10);
 	}

@@ -23,7 +23,7 @@ public static void main (String args[]) {
 
 			System.out.println("Welcome to my phone book! Please enter a number based on what you would like to do!\n"
 					+ "1.Add a new record\n" + "2.Delete a record\n" + "3.Search by first name\n"
-					+ "4.Search by last name\n" + "5.Search by full name\n" + "6.Search by phone number\n" + "7.Update a record" + "8.Exita");
+					+ "4.Search by last name\n" + "5.Search by full name\n" + "6.Search by phone number\n" + "7.Print the whole phone book\n" + "8.Exit");
 			selection = input.nextInt();
 			switch (selection) {
 			case 1:
@@ -49,9 +49,9 @@ public static void main (String args[]) {
 						
 				
 				String middleName = "";
-				if(splitFirst.length <= 4) {
+				if(splitFirst.length == 4) {
 					middleName = middleName + splitFirst[1] +" " + splitFirst[2];
-				}else {
+				}else if (splitFirst.length == 3){
 					middleName=splitFirst[1];
 				}
 				String lastName = splitFirst[splitFirst.length - 1];
@@ -79,7 +79,7 @@ public static void main (String args[]) {
 			case 2:
 				System.out.println("Please enter the phone number you'd like to delete");
 				String person2 = input.next();
-				
+				directory.deletePerson();
 				
 				break;
 			case 3:
@@ -96,7 +96,7 @@ public static void main (String args[]) {
 				break;
 			case 5:
 				System.out.println("Please enter the first and last name of the person you're looking for");
-				String person5 = input.next();
+				String person5 = usrInput.nextLine();
 				directory.searchByFull();
 				break;
 			case 6:
@@ -105,9 +105,10 @@ public static void main (String args[]) {
 				directory.searchByPhoneNum();
 				break;
 			case 7:
-				System.out.println("Please enter the phone number with no space or dashes");
+				directory.showList();
 				break;
-
+			case 8:
+				break;
 			}
 
 		}

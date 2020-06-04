@@ -67,34 +67,48 @@ public class Directory extends Person {
 	public void showList() {
 		System.out.println("Here's the information you requested: ");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		String[] temp1 = new String[people.length];
 		Person[] temp = new Person[people.length + 1];
 		for (int i = 0; i < people.length; i++) {
-			Arrays.sort(people);
-			System.out.println(people[i].toString());
+
+			temp1[i] = people[i].getLastName();
 
 		}
-
+		Arrays.sort(temp1);
+		for (int j = 0; j < temp1.length; j++) {
+			for (int l = 0; l < people.length; l++) {
+				if (temp1[j] == people[l].getLastName()) {
+					System.out.println(people[l].toString());
+				}
+			}
+		}
 	}
+
 	public void searchByFull() {
 		System.out.println("Here's the information you requested: ");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		int x = 0;
-		Person [] temp = new Person[people.length + 1];
-		for(int i=0; i < people.length; i++) {
+		Person[] temp = new Person[people.length + 1];
+		for (int i = 0; i < people.length; i++) {
 			Person p = people[i];
-			if (p.getFirstName().equals(getFirstName())&& (p.getLastName().equals(getLastName()))) {
+			if (p.getFirstName().equals(getFirstName()))  {
+				if(p.getLastName().equals(getLastName())) {
+					
+			
 				temp[x] = people[i];
 				x++;
+				}
 			}
 			System.out.println(people[i].toString());
 		}
 	}
+
 	public void searchByPhoneNum() {
 		System.out.println("Here's the information you requested: ");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		int x = 0;
-		Person [] temp = new Person[people.length + 1];
-		for(int i=0; i < people.length; i++) {
+		Person[] temp = new Person[people.length + 1];
+		for (int i = 0; i < people.length; i++) {
 			Person p = people[i];
 			if (p.getPhoneNum().equals(getPhoneNum())) {
 				temp[x] = people[i];
@@ -103,9 +117,8 @@ public class Directory extends Person {
 			System.out.println(people[i].toString());
 		}
 	}
+
 	public void updateByPhoneNum() {
-		
+
 	}
-	}
-		
-	
+}
