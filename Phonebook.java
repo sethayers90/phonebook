@@ -16,14 +16,13 @@ public static void main (String args[]) {
 		Scanner input = new Scanner(System.in);
 		Scanner usrInput = new Scanner(System.in);
 		int selection = 0;
-		String temp = null;
-		String temp1 = null;
-
-		while (selection != 8) {
+	
+		while (selection != 10) {
 
 			System.out.println("Welcome to my phone book! Please enter a number based on what you would like to do!\n"
 					+ "1.Add a new record\n" + "2.Delete a record\n" + "3.Search by first name\n"
-					+ "4.Search by last name\n" + "5.Search by full name\n" + "6.Search by phone number\n" + "7.Print the whole phone book\n" + "8.Exit");
+					+ "4.Search by last name\n" + "5.Search by full name\n" + "6.Search by phone number\n" + "7.Print the whole phone book\n" + "8.Update a user\n" 
+					+ "9.Exit");
 			selection = input.nextInt();
 			switch (selection) {
 			case 1:
@@ -108,6 +107,9 @@ public static void main (String args[]) {
 				directory.showList();
 				break;
 			case 8:
+				directory.updateByPhoneNum();
+				break;
+			case 9:
 				break;
 			}
 

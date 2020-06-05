@@ -2,6 +2,8 @@ package com.claim;
 
 import java.util.Arrays;
 
+import java.util.Scanner;
+
 public class Directory extends Person {
 	Person[] people = new Person[0];
 
@@ -119,6 +121,63 @@ public class Directory extends Person {
 	}
 
 	public void updateByPhoneNum() {
-
+		System.out.println("Please select from the menu below what you'd like to update\n" +  "1.Update the first name\n" + "2.Update the last name\n" 
+				+ "3.Update the phone number");
+				
+		Scanner usrInput = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
+		int selection = usrInput.nextInt();
+		
+		switch (selection) {
+		
+		case 1: 
+			Person[]temp = new Person[people.length];
+			System.out.println("Please enter the persons phone number");
+			String newSelection = input.next();
+			System.out.println("Please enter the new first name");
+			String newFirst = usrInput.next();
+			for(int i =0; i<people.length; i++) {
+				Person p = people[i];
+				
+				if(p.getPhoneNum().equals(newSelection));
+				p.setFirstName(newFirst);
+				
+			}
+			
+			
+			
+		
+			
+			break;
+		case 2:
+			Person[] temp1 = new Person[people.length];
+			System.out.println("Please enter the persons phone number");
+			String newSelection1 = input.next();
+			System.out.println("Please enter the new last name");
+			String newLast = usrInput.next();
+			for(int i =0; i<people.length; i++) {
+				Person p = people[i];
+				
+				if(p.getPhoneNum().equals(newSelection1));
+				p.setLastName(newLast);
+				
+			}
+			
+			break;
+		case 3: 
+			Person[] temp2 = new Person[people.length];
+			System.out.println("Please enter the persons phone number");
+			String newSelection2 = input.next();
+			System.out.println("Please enter the new phone number");
+			String newPhoneNum = usrInput.next();
+			for(int i =0; i<people.length; i++) {
+				Person p = people[i];
+				
+				if(p.getPhoneNum().equals(newSelection2));
+				p.setPhoneNum(newPhoneNum);
+				
+			}
+			break;
+		}
 	}
 }
